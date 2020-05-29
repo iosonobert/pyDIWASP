@@ -34,24 +34,25 @@ def readID(filename):
         depth = int(float(f.readline().split()[0]))
         fs = int(float(f.readline().split()[0]))
         
-        f.readline()
-        l1 = [float(x) for x in f.readline().split()]
-        l2 = [float(x) for x in f.readline().split()]
-        l3 = [float(x) for x in f.readline().split()]
-        xyz = np.array([l1, l2, l3])        
-        f.readline()
+        # f.readline()
+        # l1 = [float(x) for x in f.readline().split()]
+        # l2 = [float(x) for x in f.readline().split()]
+        # l3 = [float(x) for x in f.readline().split()]
+        # xyz = np.array([l1, l2, l3])        
+        # f.readline()
         
-        f.readline()
+        print(f.readline())
         l1 = [float(x) for x in f.readline().split()]
         l2 = [float(x) for x in f.readline().split()]
         l3 = [float(x) for x in f.readline().split()]
         layout = np.array([l1, l2, l3])        
-        f.readline()
+        print(f.readline())
         
         datatypes = []
         data = []
         for i in np.arange(0, m):
             datatypes.append(f.readline())
+            print(datatypes)
             data.append([float(f.readline().split()[0]) for i in np.arange(0, n)])
 
         
@@ -62,7 +63,7 @@ def readID(filename):
     ID['depth'] = depth
     ID['fs'] = fs
 
-    ID['xyz'] = xyz
+    # ID['xyz'] = xyz
     ID['layout'] = layout
 
     ID['datatypes'] = datatypes
