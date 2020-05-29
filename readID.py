@@ -37,7 +37,7 @@ def readID(filename):
         f.readline()
         l1 = [float(x) for x in f.readline().split()]
         l2 = [float(x) for x in f.readline().split()]
-        l3 = [float(x) for x in f.readline().split()]f.readline().split()
+        l3 = [float(x) for x in f.readline().split()]
         xyz = np.array([l1, l2, l3])        
         f.readline()
         

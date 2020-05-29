@@ -7,12 +7,17 @@ def readspec(filename, funit='hz', dunit='cart'):
     Translated from Matlab by by Andrew
     """
     
+    print('in')
     with open(filename) as f:
+        print('open')
 
         datain = f.readlines()
+    print('read')
 
     datain = [float(x.split()[0]) for x in datain]
     datain = np.array(datain)
+    
+    print('comprehended')
     
     SM = {}
     SM['xaxisdir'] = datain[0]
