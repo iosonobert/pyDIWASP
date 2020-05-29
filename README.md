@@ -2,16 +2,26 @@
 conversion of diwasp package (DIWASP: DIrectional WAve SPectrum analysis Version 1.4) for python
 converted from https://github.com/metocean/diwasp
 
+Many of the functions were not ported over originally. 
+
 ## Toolbox contents:
 ### Main functions:
+#### Functions originally ported over
 - dirspec.m           Main function for directional wave analysis
-- readspec.m          Reads in DIWASP format spectrum files
 - writespec.m         Writes DIWASP format spectrum files
 - plotspec.m          Plots DIWASP spectrums
-- testspec.m          Testing function for the estimation methods
-- makespec.m          Makes a fake spectrum and generates fake data for testing dirspec.m
 - infospec.m          Returns information about a directional spectrum
+
+#### Functions now ported over
+- readspec.m          Reads in DIWASP format spectrum files
+
+#### Functions not ported over
+- makespec.m          Makes a fake spectrum and generates fake data for testing dirspec.m
 - data_structures.m   is a help file describing the new Version 1.1 data structures
+- testspec.m          Testing function for the estimation methods
+
+#### New functions
+- readID.py
 
 ## Private functions (some can be used as stand alone functions):
 ### The transfer functions
