@@ -49,10 +49,10 @@ def check_data(DDS, type_):
             DDS['datatypes'] = np.reshape(DDS['datatypes'], 
                 np.size(DDS['datatypes']))
         
-        if 'depth' not in DDS or type(DDS['depth']) not in (int, float):
+        if 'depth' not in DDS or type(DDS['depth']) not in (int, float, np.float64):
             error = 'depth'
         
-        if 'fs' not in DDS or type(DDS['fs']) not in (int, float):
+        if 'fs' not in DDS or type(DDS['fs']) not in (int, float, np.float64):
             error = 'fs'
         
         if 'data' in DDS:
@@ -93,7 +93,7 @@ def check_data(DDS, type_):
                 DDS['S'] = []
         
         if 'xaxisdir' in DDS:
-            if type(DDS['xaxisdir']) not in (int, float):
+            if type(DDS['xaxisdir']) not in (int, float, np.float64):
                 error = 'xaxisdir'
         else:
             DDS['xaxisdir'] = SM['xaxisdir']
@@ -119,7 +119,7 @@ def check_data(DDS, type_):
                 'structure')
         
         if 'dres' in DDS:
-            if type(DDS['dres']) not in (int, float):
+            if type(DDS['dres']) not in (int, float, np.float64):
                 error = 'dres'
             elif DDS['dres'] < 10:
                 DDS['dres'] = 10
@@ -129,7 +129,7 @@ def check_data(DDS, type_):
             DDS['dres'] = EP['dres']
         
         if 'nfft' in DDS:
-            if type(DDS['nfft']) not in (int, float):
+            if type(DDS['nfft']) not in (int, float, np.float64):
                 error = 'nfft'
             elif DDS['nfft'] < 64:
                 DDS['nfft'] = 64
@@ -138,7 +138,7 @@ def check_data(DDS, type_):
             DDS['nfft'] = EP['nfft']
         
         if 'iter' in DDS:
-            if type(DDS['iter']) not in (int, float):
+            if type(DDS['iter']) not in (int, float, np.float64):
                 error = 'iter'
         else:
             DDS['iter'] = EP['iter']
@@ -158,7 +158,7 @@ def check_data(DDS, type_):
         
         if len(error) != 0:
             print('\nEstimation parameters structure error: field [{}] not '
-                'specified correctly')
+                'specified correctly'.format(error))
             DDS = []
             return DDS
     

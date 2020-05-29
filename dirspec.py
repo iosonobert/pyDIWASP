@@ -54,7 +54,10 @@ def dirspec(ID, SM, EP, Options_=None):
 
     Options = {'MESSAGE':1, 'PLOTTYPE':1, 'FILEOUT':''}
 
-    nopts = len(Options_)
+    if Options_ is None:
+        nopts = 0
+    else:
+        nopts = len(Options_)
 
     ID = check_data(ID, 1); 
     if len(ID) == 0: return [], []
@@ -81,7 +84,7 @@ def dirspec(ID, SM, EP, Options_=None):
     ndat, szd = np.shape(ID['data'])
 
     #get resolution of FFT - if not specified, calculate a sensible value
-    if len(EP['nfft']) == 0:
+    if type(EP['nfft']) is int:
         nfft = int(2 ** (8 + np.round(np.log2(ID['fs']))))
         EP['nfft'] = nfft
     else:
