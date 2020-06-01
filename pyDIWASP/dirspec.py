@@ -3,19 +3,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 from scipy.signal import detrend
-from interpspec import interpspec
-from infospec import infospec
-from writespec import writespec
-from plotspec import plotspec
-from private.velx import velx
-from private.vely import vely
-from private.pres import pres
-from private.elev import elev
-from private.wavenumber import wavenumber
-from private.IMLM import IMLM
-from private.smoothspec import smoothspec
-from private.diwasp_csd import diwasp_csd
-from private.check_data import check_data
+from pyDIWASP.interpspec import interpspec
+from pyDIWASP.infospec import infospec
+from pyDIWASP.writespec import writespec
+from pyDIWASP.plotspec import plotspec
+from pyDIWASP.private.velx import velx
+from pyDIWASP.private.vely import vely
+from pyDIWASP.private.pres import pres
+from pyDIWASP.private.elev import elev
+from pyDIWASP.private.wavenumber import wavenumber
+from pyDIWASP.private.IMLM import IMLM
+from pyDIWASP.private.smoothspec import smoothspec
+from pyDIWASP.private.diwasp_csd import diwasp_csd
+from pyDIWASP.private.check_data import check_data
 
 def dirspec(ID, SM, EP, Options_=None):
     """
