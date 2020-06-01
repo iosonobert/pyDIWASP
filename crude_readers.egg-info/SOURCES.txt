@@ -1,0 +1,7 @@
+README.md
+setup.py
+crude_readers.egg-info/PKG-INFO
+crude_readers.egg-info/SOURCES.txt
+crude_readers.egg-info/dependency_links.txt
+crude_readers.egg-info/requires.txt
+crude_readers.egg-info/top_level.txt
